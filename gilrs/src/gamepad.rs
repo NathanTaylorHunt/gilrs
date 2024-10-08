@@ -470,7 +470,7 @@ impl Gilrs {
     pub fn gamepad(&self, id: GamepadId) -> Gamepad {
         Gamepad {
             inner: self.inner.gamepad(id.0).unwrap(),
-            data: &self.gamepads_data[id.0.clamp(0, self.gamepads_data.len())],  // !!! hack
+            data: &self.gamepads_data[id.0.clamp(0, self.gamepads_data.len()-1)],  // !!! hack
         }
     }
 
