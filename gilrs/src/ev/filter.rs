@@ -165,6 +165,7 @@ pub fn deadzone(ev: Option<Event>, gilrs: &mut Gilrs) -> Option<Event> {
 
                 if val.0 == 0.
                     && val.1 == 0.
+                    && id.0 < gilrs.gamepads_data.len()
                     && gilrs.gamepads_data[id.0].have_sent_nonzero_for_axis[other_axis_idx]
                     && gilrs.gamepad(id).state().value(other_code) != 0.
                 {
